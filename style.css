@@ -282,7 +282,11 @@ nav .links a:hover {
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-top: 48px;
+    margin-top: 32px;
+}
+
+.screenshots-grid + .screenshots-grid {
+    margin-top: 12px;
 }
 
 .screenshot-img {
