@@ -214,8 +214,7 @@ nav .links a:hover {
 }
 
 .hero-phone {
-    width: 160px;
-    max-width: 30%;
+    max-width: 160px;
     height: auto;
     border-radius: 16px;
     border: 1px solid var(--border);
@@ -225,8 +224,7 @@ nav .links a:hover {
 }
 
 .hero-phone-center {
-    width: 180px;
-    max-width: 34%;
+    max-width: 180px;
     z-index: 2;
 }
 
@@ -421,8 +419,7 @@ nav .links a:hover {
 }
 
 .screenshot-img {
-    width: 160px;
-    max-width: 30%;
+    max-width: 160px;
     height: auto;
     border-radius: 12px;
     border: 1px solid var(--border);
