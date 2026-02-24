@@ -208,9 +208,13 @@ nav .links a:hover {
     align-items: center;
     gap: 12px;
     margin-bottom: 48px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-phone {
+    max-width: 33%;
     height: auto;
     border-radius: 16px;
     border: 1px solid var(--border);
@@ -381,6 +385,24 @@ nav .links a:hover {
 }
 
 /* ========================================
+   The Secret
+   ======================================== */
+.secret-text {
+    font-size: 14px;
+    color: var(--secondary);
+    line-height: 1.9;
+    max-width: 520px;
+    margin: 32px auto 0;
+}
+
+.secret-cta {
+    color: var(--gold);
+    font-style: italic;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+}
+
+/* ========================================
    Screenshots
    ======================================== */
 .screenshots-grid {
@@ -388,6 +410,9 @@ nav .links a:hover {
     justify-content: center;
     gap: 12px;
     margin-top: 32px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .screenshots-grid + .screenshots-grid {
