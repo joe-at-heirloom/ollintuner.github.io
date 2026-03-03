@@ -673,18 +673,30 @@ footer .sign-off {
 
     .hero .tagline {
         font-size: 13px;
+        padding: 0 8px;
+    }
+
+    .hero-screenshots {
+        gap: 8px;
+        max-width: 100%;
+    }
+
+    .hero-phone {
+        width: auto;
+        max-width: 30%;
     }
 
     .hero-phone-center {
-        width: 150px;
-    }
-
-    .hero-phone-side {
-        width: 120px;
+        width: auto;
+        max-width: 36%;
     }
 
     .features-grid {
         grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 24px 20px;
     }
 
     .steps {
@@ -702,22 +714,30 @@ footer .sign-off {
     }
 
     .screenshot-img {
-        width: 100px;
+        width: auto;
+        max-width: 30%;
     }
 
     .screenshots-grid {
         gap: 8px;
+        max-width: 100%;
     }
 
     nav .links {
-        gap: 16px;
+        gap: 10px;
     }
 
     nav .links a {
         font-size: 9px;
+        letter-spacing: 1px;
     }
 
     section {
         padding: 48px 0;
+    }
+
+    footer .footer-links {
+        flex-wrap: wrap;
+        gap: 16px;
     }
 }
