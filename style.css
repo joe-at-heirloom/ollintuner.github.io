@@ -555,6 +555,36 @@ footer .sign-off {
 }
 
 /* ========================================
+   Developer Bar
+   ======================================== */
+.dev-bar {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 14px 24px;
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+}
+
+.dev-bar-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--tertiary);
+    margin-right: 6px;
+}
+
+.dev-bar-name {
+    font-family: 'Instrument Serif', serif;
+    font-size: 14px;
+    color: var(--secondary);
+    transition: color 0.2s;
+}
+
+.dev-bar-name:hover {
+    color: var(--gold-bright);
+}
+
+/* ========================================
    Privacy, Terms & Support Pages
    ======================================== */
 .page-header {
