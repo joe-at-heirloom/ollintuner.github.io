@@ -2,7 +2,8 @@
    Ollin Tuner — interactive dial
    A web rendition of the app's hold-to-tune ritual: an animated Aztec Sun Stone,
    cymatics sand, a 120 → 432 Hz sweep while held, then a spoken transmission.
-   Drawn geometry only (the app's glyph font isn't licensed for web embedding).
+   Day signs use the same "Aztec" glyph font as the app (Levi Halmos, 2000); the drawn
+   marks below are only a fallback until it loads.
    ======================================== */
 (() => {
     "use strict";
@@ -191,7 +192,15 @@
         ctx.restore();
     }
 
-    // Twelve simple day-sign marks (drawn, not the app's font)
+    // The app's glyph font — characters A–L are the twelve day signs it uses
+    const GLYPHS = "ABCDEFGHIJKL";
+    let glyphFontReady = false;
+    if ("fonts" in document && window.FontFace) {
+        const face = new FontFace("aztec", "url(aztecglyphs.ttf)");
+        face.load().then((f) => { document.fonts.add(f); glyphFontReady = true; }).catch(() => {});
+    }
+
+    // Fallback marks, drawn until (or if) the glyph font loads
     function daySign(i, s) {
         ctx.beginPath();
         switch (i % 6) {
@@ -300,10 +309,20 @@
                 ctx.save();
                 ctx.translate(Math.cos(a) * mid, Math.sin(a) * mid);
                 ctx.rotate(-rot * 0.7 * Math.PI / 180);           // glyphs stay upright
-                ctx.beginPath(); ctx.arc(0, 0, cr, 0, TAU);
-                ctx.globalAlpha = 0.35 * tw; ctx.strokeStyle = C.brightGold; ctx.lineWidth = 0.8; ctx.stroke();
-                ctx.globalAlpha = 0.9 * tw; ctx.strokeStyle = C.brightGold; ctx.lineWidth = 1.2;
-                daySign(i, cr * 0.55);
+                if (glyphFontReady) {
+                    // Same proportions as the app: glyph size = 10% of the calendar's diameter
+                    ctx.globalAlpha = 0.9 * tw;
+                    ctx.fillStyle = C.brightGold;
+                    ctx.font = `${(R / 0.48) * 0.10}px aztec`;
+                    ctx.textAlign = "center";
+                    ctx.textBaseline = "middle";
+                    ctx.fillText(GLYPHS[i], 0, 0);
+                } else {
+                    ctx.beginPath(); ctx.arc(0, 0, cr, 0, TAU);
+                    ctx.globalAlpha = 0.35 * tw; ctx.strokeStyle = C.brightGold; ctx.lineWidth = 0.8; ctx.stroke();
+                    ctx.globalAlpha = 0.9 * tw; ctx.strokeStyle = C.brightGold; ctx.lineWidth = 1.2;
+                    daySign(i, cr * 0.55);
+                }
                 ctx.restore();
             }
             ctx.globalAlpha = 1;

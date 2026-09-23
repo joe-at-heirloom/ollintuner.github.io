@@ -739,6 +739,7 @@ section { padding: 96px 0; }
 }
 .footer-links a:hover { color: var(--gold-bright); }
 .copyright { font-size: 11px; color: var(--tertiary); }
+.credit { font-size: 10px; color: var(--tertiary); opacity: 0.7; margin-top: 6px; }
 .sign-off {
     font-family: var(--serif);
     font-style: italic;
