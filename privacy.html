@@ -2,156 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Ollin Tuner</title>
-    <meta name="description" content="Privacy Policy for the Ollin Tuner iOS app.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy Policy — The Ollin Tuner</title>
+    <meta name="description" content="How the Ollin Tuner iOS app handles your data.">
+    <meta name="theme-color" content="#050403">
+    <meta name="apple-itunes-app" content="app-id=6759269358">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Background -->
-    <div class="bg-void">
-        <div class="dust"></div><div class="dust"></div><div class="dust"></div>
-        <div class="dust"></div><div class="dust"></div><div class="dust"></div>
-        <div class="dust"></div><div class="dust"></div><div class="dust"></div>
-        <div class="dust"></div>
-    </div>
+    <div class="bg-void" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">Ollin Tuner</a>
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><circle cx="12" cy="12" r="4"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg>
+                Ollin Tuner
+            </a>
             <div class="links">
                 <a href="index.html">Home</a>
-                <a href="terms.html">Terms</a>
                 <a href="support.html">Support</a>
+                <a href="terms.html">Terms</a>
             </div>
+            <a href="https://apps.apple.com/us/app/the-ollin-tuner/id6759269358" class="btn btn-small">Get the app</a>
         </div>
     </nav>
 
-    <div class="content">
+    <main class="content">
 
         <div class="page-header">
             <h1>Privacy Policy</h1>
-            <p class="updated">Last updated: February 17, 2026</p>
+            <p class="updated">Last updated: September 22, 2026</p>
         </div>
 
         <div class="container">
             <div class="page-content">
 
-                <p>Ollin Tuner ("the App") is developed and operated by Joseph Lint ("we", "us", "our"). We respect your privacy and are committed to being transparent about how data is handled when you use our App.</p>
+                <p>The Ollin Tuner (&ldquo;the App&rdquo;) is developed and operated by Joseph Lint (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;). This policy explains what data the App handles, who it is shared with, and the choices you have. It describes version 1.2 and later; differences in earlier versions are noted where they apply.</p>
 
-                <h2>Information We Collect</h2>
-
-                <p>We do not collect, store, or transmit any personal information. The App does not require account creation, login, or any form of registration.</p>
-
-                <h2>Third-Party AI Service (Groq)</h2>
-
-                <p>The App uses an AI service provided by <strong>Groq Inc.</strong> to generate readings. When you use the reading feature:</p>
+                <h2>The Short Version</h2>
                 <ul>
-                    <li>The text of your question is sent to Groq's servers (<a href="https://groq.com" target="_blank">groq.com</a>) for processing</li>
-                    <li>Groq processes the question and returns a generated reading</li>
-                    <li>We do not store, log, or retain your questions or the AI-generated responses on our servers</li>
-                    <li>Your questions are not associated with any personal identifier by us</li>
-                    <li>The App requests your consent before sending any data to Groq for the first time</li>
+                    <li>No account, no login, and we never ask for your name, email, or contacts.</li>
+                    <li>Your question is sent to an AI service (Groq) to generate a reading. We don&rsquo;t store it.</li>
+                    <li>We count anonymous app events (like &ldquo;a reading was revealed&rdquo;) with TelemetryDeck. These never include your questions or readings.</li>
+                    <li>Free users see ads from Google AdMob, served differently depending on age. Ads are only personalized for adults who allow it.</li>
+                    <li>Buying Eternal Frequency removes ads and the data collection that comes with them.</li>
                 </ul>
-                <p>Groq may process and temporarily store your question text on their servers in accordance with their policies. For full details on how Groq handles data, see <a href="https://groq.com/privacy-policy/" target="_blank">Groq's Privacy Policy</a>.</p>
-                <p><strong>We recommend that you do not include any sensitive personal information (names, addresses, financial details, medical information) in your questions.</strong></p>
+
+                <h2>Your Questions and Readings (Groq)</h2>
+                <p>When you ask for an AI reading, the text of your question is sent to <strong>Groq, Inc.</strong> to generate a response:</p>
+                <ul>
+                    <li>We do not store, log, or retain your questions or the readings generated from them.</li>
+                    <li>Your questions are not associated with any identifier by us.</li>
+                    <li>The App asks for your consent before sending anything to Groq for the first time.</li>
+                </ul>
+                <p>Groq may process and temporarily store question text under its own policies &mdash; see <a href="https://groq.com/privacy-policy/" target="_blank" rel="noopener">Groq&rsquo;s Privacy Policy</a>. Please don&rsquo;t include sensitive personal information (names, addresses, financial or medical details) in your questions.</p>
+
+                <h2>The Voice of Ollin</h2>
+                <p>From version 1.2, readings are spoken using Apple&rsquo;s built-in speech on your device. No text or audio is sent anywhere for the voice.</p>
+                <p><em>Versions 1.1 and earlier</em> sent the text of each reading to <strong>ElevenLabs</strong> to generate the voice (<a href="https://elevenlabs.io/privacy" target="_blank" rel="noopener">ElevenLabs&rsquo; Privacy Policy</a>). Updating the App ends this.</p>
+
+                <h2>Your Birth Year</h2>
+                <p>The App asks once for your birth year. It is used only on your device to decide how ads are served (see below), is stored in the iOS Keychain, and is never sent to us or to advertisers.</p>
+
+                <h2>Anonymous Analytics (TelemetryDeck)</h2>
+                <p>We use <strong>TelemetryDeck</strong> to understand how the App is used so we can improve it. The App sends coarse events such as a reading being revealed, the tutorial being closed, the purchase screen being shown, or a purchase completing (including its price and currency). Each event carries a randomly generated, hashed identifier and basic technical details (app version, iOS version, device type, region).</p>
+                <ul>
+                    <li>Events never contain your questions, readings, secret answers, or exact age.</li>
+                    <li>Analytics data is not linked to your identity and is not used for tracking or advertising.</li>
+                </ul>
+                <p>See <a href="https://telemetrydeck.com/privacy/" target="_blank" rel="noopener">TelemetryDeck&rsquo;s Privacy Policy</a>.</p>
+
+                <h2>Advertising (Google AdMob)</h2>
+                <p>Free users see banner, full-screen, and optional rewarded ads from <strong>Google AdMob</strong>. All ads are limited to content suitable for all ages. How ads are requested depends on the birth year you enter:</p>
+                <div class="table-scroll">
+                <table>
+                    <tr><th>Age</th><th>How ads are served</th></tr>
+                    <tr><td>Under 13</td><td>Requested as child-directed (COPPA). No consent form and no tracking request are shown.</td></tr>
+                    <tr><td>13&ndash;17</td><td>Non-personalized ads only. No tracking request is shown.</td></tr>
+                    <tr><td>18 and over</td><td>Where required (e.g. the EEA, UK, and Switzerland), Google&rsquo;s consent form asks for your choices. The App may then ask for permission to track (App Tracking Transparency). Ads are only personalized if you allow it.</td></tr>
+                </table>
+                </div>
+                <p>Depending on your age and choices, AdMob may collect device identifiers (such as the IDFA, only if you allow tracking), IP address and approximate location, ad interaction data, and device and diagnostic information. This data is collected directly by Google and is not accessible to us. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses data from partner apps</a>.</p>
+                <p>The App also includes Apple&rsquo;s SKAdNetwork identifiers, which let ad networks measure campaigns without revealing who you are.</p>
+                <p><em>Versions 1.1 and earlier</em> requested all ads as child-directed and did not show a consent form or tracking request.</p>
+
+                <h2>In-App Purchases (Apple StoreKit)</h2>
+                <p>Purchases are processed entirely by Apple. We never see your payment information or Apple ID. See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple&rsquo;s Privacy Policy</a>.</p>
 
                 <h2>Data Stored on Your Device</h2>
-                <p>The App stores the following data locally on your device:</p>
                 <ul>
-                    <li>Reading count (stored in Keychain for persistence)</li>
-                    <li>Purchase status and app preferences (stored in UserDefaults)</li>
-                    <li>Daily usage counts for reading limits (stored in UserDefaults)</li>
-                    <li>Tutorial and onboarding completion flags (stored in UserDefaults)</li>
-                    <li>AI consent preference (stored in UserDefaults)</li>
+                    <li>Reading counts and your birth year (iOS Keychain)</li>
+                    <li>Daily and bonus transmission counts, purchase status, tutorial progress, and your AI consent choice (UserDefaults)</li>
                 </ul>
-                <p>This data never leaves your device and is not accessible to us.</p>
+                <p>This data stays on your device and is not accessible to us. Keychain items may persist after deleting the App.</p>
 
-                <h2>iCloud Sync</h2>
-                <p>The App uses Apple's iCloud Key-Value Store to sync reading counters across your devices. This data is managed entirely by Apple and governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>. We do not have access to your iCloud data.</p>
-
-                <h2>Google AdMob</h2>
-                <p>The App uses Google AdMob to display advertisements. AdMob may collect the following data for the purpose of serving and measuring ads:</p>
-                <ul>
-                    <li>Device identifiers (such as IDFA, when permitted)</li>
-                    <li>IP address (used for approximate location and ad serving)</li>
-                    <li>Ad interaction data (impressions, clicks)</li>
-                    <li>Device and usage information (device model, OS version, app usage patterns)</li>
-                    <li>Cookies and similar technologies</li>
-                </ul>
-                <p>This data is collected directly by Google's SDK and is not accessible to us. Premium users who purchase the Unlimited Access upgrade are not shown any ads, and AdMob data collection ceases for those users.</p>
-                <p>For more information, see <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank">Google's advertising data usage</a>.</p>
-
-                <h2>SKAdNetwork</h2>
-                <p>The App includes Apple's SKAdNetwork identifiers for privacy-preserving ad attribution. This allows ad networks to measure campaign performance without revealing your personal information. This is managed entirely by Apple at the operating system level.</p>
-
-                <h2>Apple StoreKit</h2>
-                <p>In-app purchases are processed entirely by Apple through StoreKit. We do not have access to your payment information, Apple ID, or financial data. Purchases are governed by <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple's Privacy Policy</a>.</p>
-
-                <h2>Children's Privacy</h2>
-                <p>Ollin Tuner is rated for ages 4 and up. All readings are positive, encouraging, and family-friendly. We do not knowingly collect any personal information from children. The App does not include any features that require personal data input beyond the question text, which is not stored by us.</p>
+                <h2>Children&rsquo;s Privacy</h2>
+                <p>The App is rated 4+. We do not knowingly collect personal information from children. Users who indicate they are under 13 receive only child-directed ads and are never asked for tracking permission. Anonymous analytics events do not identify anyone.</p>
 
                 <h2>Data Retention</h2>
-                <p>We do not retain any user data on our servers. All locally stored data on your device can be removed by deleting the App. Reading counts stored in Keychain may persist after App deletion and can be cleared through your device's settings.</p>
+                <p>We do not operate servers that store your personal data. Anonymous analytics are retained by TelemetryDeck in aggregate form. Local data is removed by deleting the App (Keychain items may remain until cleared).</p>
 
-                <h2>Your Rights</h2>
-                <p>Since we do not collect or store personal data, there is no personal data for us to provide, modify, or delete. To manage data collected by Google AdMob, you can adjust your device's ad tracking settings or opt out through <a href="https://adssettings.google.com" target="_blank">Google's Ad Settings</a>.</p>
+                <h2>Your Choices</h2>
+                <ul>
+                    <li>Change your ad consent choices anytime under <strong>Settings &rarr; Privacy Choices</strong> in the App (shown where required).</li>
+                    <li>Turn tracking off in iOS <strong>Settings &rarr; Privacy &amp; Security &rarr; Tracking</strong>.</li>
+                    <li>Manage Google ad preferences at <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google&rsquo;s Ad Settings</a>.</li>
+                    <li>Purchase <strong>Eternal Frequency</strong> to remove ads and the associated data collection.</li>
+                </ul>
 
                 <h2>Changes to This Policy</h2>
-                <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last updated" date. We encourage you to review this policy periodically.</p>
+                <p>We may update this policy from time to time. Changes are posted on this page with a new &ldquo;Last updated&rdquo; date.</p>
 
-                <h2>Contact Us</h2>
+                <h2>Contact</h2>
                 <div class="contact-box">
-                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                    <p>Questions about this policy?</p>
                     <p><a href="mailto:contact@ollintuner.com">contact@ollintuner.com</a></p>
                 </div>
-
-                <!--
-                ==========================================
-                APP STORE PRIVACY NUTRITION LABELS GUIDE
-                ==========================================
-                When filling out App Privacy in App Store Connect, select:
-
-                DATA USED TO TRACK YOU:
-                - Identifiers > Device ID (via AdMob / SKAdNetwork)
-
-                DATA NOT LINKED TO YOU:
-                - Usage Data > Product Interaction (via AdMob - ad impressions/clicks)
-                - Usage Data > Other Data Types (questions sent to Groq - transient, not stored)
-                - Diagnostics > Performance Data (via AdMob SDK)
-                - Identifiers > Device ID (via AdMob - for ad serving)
-
-                DATA NOT COLLECTED:
-                - Everything else (no names, emails, photos, location, contacts, etc.)
-
-                NOTES:
-                - If user has purchased premium (unlimited), AdMob is disabled
-                  and no third-party data collection occurs
-                - Questions sent to Groq API are transient and not stored by us,
-                  disclosed under "Usage Data > Other Data Types" to be safe
-                ==========================================
-                -->
 
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="terms.html">Terms of Use</a>
-                    <a href="support.html">Support</a>
-                    <a href="mailto:contact@ollintuner.com">Contact</a>
-                </div>
-                <p class="copyright">&copy; 2025 Ollin Tuner. All rights reserved.</p>
-            </div>
-        </footer>
+    </main>
 
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="support.html">Support</a>
+                <a href="mailto:contact@ollintuner.com">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2026 Ollin Tuner. For entertainment purposes only.</p>
+        </div>
+    </footer>
+
+    <div class="dev-bar">
+        <span class="dev-bar-label">Brought to you by</span>
+        <a href="https://joelint.com" class="dev-bar-name">Joe Lint</a>
     </div>
 </body>
 </html>

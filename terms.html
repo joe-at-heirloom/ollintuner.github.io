@@ -2,44 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Use - Ollin Tuner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Terms of Use — The Ollin Tuner</title>
     <meta name="description" content="Terms of Use for the Ollin Tuner iOS app.">
+    <meta name="theme-color" content="#050403">
+    <meta name="apple-itunes-app" content="app-id=6759269358">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Background -->
-    <div class="bg-void">
-        <div class="dust"></div><div class="dust"></div><div class="dust"></div>
-        <div class="dust"></div><div class="dust"></div><div class="dust"></div>
-        <div class="dust"></div><div class="dust"></div><div class="dust"></div>
-        <div class="dust"></div>
-    </div>
+    <div class="bg-void" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">Ollin Tuner</a>
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><circle cx="12" cy="12" r="4"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg>
+                Ollin Tuner
+            </a>
             <div class="links">
                 <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy</a>
                 <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
             </div>
+            <a href="https://apps.apple.com/us/app/the-ollin-tuner/id6759269358" class="btn btn-small">Get the app</a>
         </div>
     </nav>
 
-    <div class="content">
+    <main class="content">
 
         <div class="page-header">
             <h1>Terms of Use</h1>
-            <p class="updated">Last updated: February 17, 2026</p>
+            <p class="updated">Last updated: September 22, 2026</p>
         </div>
 
         <div class="container">
             <div class="page-content">
+
 
                 <p>Welcome to Ollin Tuner. By downloading, installing, or using the Ollin Tuner application ("the App"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree to these Terms, do not use the App.</p>
 
@@ -68,13 +71,13 @@
                 <h2>4. In-App Purchases</h2>
                 <p>The App offers the following in-app purchases:</p>
                 <ul>
-                    <li><strong>3 Additional Readings</strong> (consumable): Adds 3 readings to your balance. This is a one-time consumable purchase and is non-refundable once used.</li>
-                    <li><strong>Unlimited Access</strong> (non-consumable): A one-time lifetime purchase that unlocks unlimited readings and removes all advertisements permanently.</li>
+                    <li><strong>3 More Transmissions</strong> (consumable): Adds 3 transmissions to your balance. They do not expire. This is a one-time consumable purchase and is non-refundable once used.</li>
+                    <li><strong>Eternal Frequency</strong> (non-consumable): A one-time lifetime purchase that unlocks unlimited transmissions and removes all advertisements permanently.</li>
                 </ul>
                 <p>All purchases are processed by Apple through the App Store. Payment will be charged to your Apple ID account at confirmation of purchase. Pricing is displayed in the App and may vary by region. Refund requests must be directed to Apple per their <a href="https://support.apple.com/en-us/HT204084" target="_blank">refund policy</a>.</p>
 
                 <h2>5. Advertising</h2>
-                <p>The free version of the App displays advertisements through Google AdMob. These ads may collect certain device and usage data as described in our <a href="privacy.html">Privacy Policy</a>. Users who purchase Unlimited Access will not be shown any advertisements, and ad-related data collection will cease.</p>
+                <p>The free version of the App displays advertisements through Google AdMob, including optional rewarded ads that grant one additional transmission when watched to completion. How ads are served depends on the birth year you provide, as described in our <a href="privacy.html">Privacy Policy</a>. Rewarded transmissions have no cash value. Users who purchase Eternal Frequency will not be shown any advertisements, and ad-related data collection will cease.</p>
 
                 <h2>6. Acceptable Use</h2>
                 <p>You agree not to:</p>
@@ -108,7 +111,7 @@
                 </ul>
 
                 <h2>10. Third-Party Services</h2>
-                <p>The App relies on third-party services including Apple (App Store, StoreKit, iCloud), Google (AdMob), and Groq (AI). We are not responsible for the availability, performance, or policies of these third-party services. Your use of these services is governed by their respective terms and privacy policies.</p>
+                <p>The App relies on third-party services including Apple (App Store, StoreKit), Google (AdMob), Groq (AI), and TelemetryDeck (anonymous analytics). We are not responsible for the availability, performance, or policies of these third-party services. Your use of these services is governed by their respective terms and privacy policies.</p>
 
                 <h2>11. Changes to These Terms</h2>
                 <p>We reserve the right to modify these Terms at any time. Changes will be effective when posted on this page with an updated "Last updated" date. Your continued use of the App following any changes constitutes acceptance of the revised Terms.</p>
@@ -131,19 +134,23 @@
             </div>
         </div>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="support.html">Support</a>
-                    <a href="mailto:contact@ollintuner.com">Contact</a>
-                </div>
-                <p class="copyright">&copy; 2025 Ollin Tuner. All rights reserved.</p>
-            </div>
-        </footer>
+    </main>
 
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="support.html">Support</a>
+                <a href="mailto:contact@ollintuner.com">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2026 Ollin Tuner. For entertainment purposes only.</p>
+        </div>
+    </footer>
+
+    <div class="dev-bar">
+        <span class="dev-bar-label">Brought to you by</span>
+        <a href="https://joelint.com" class="dev-bar-name">Joe Lint</a>
     </div>
 </body>
 </html>

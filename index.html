@@ -2,239 +2,300 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ollin Tuner - Calibrate the Ancient Frequency</title>
-    <meta name="description" content="Ask a question. Hold the dial. Receive a transmission. Ollin Tuner is an Aztec oracle powered by ancient vibrations and modern AI.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>The Ollin Tuner — Aztec Oracle for iPhone</title>
+    <meta name="description" content="Ask a question. Press and hold the dial. Receive a transmission from the Fifth Sun. The Ollin Tuner is an Aztec oracle for iPhone.">
+    <meta name="theme-color" content="#050403">
+    <meta name="apple-itunes-app" content="app-id=6759269358">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ollintuner.com/">
+    <meta property="og:title" content="The Ollin Tuner — Aztec Oracle for iPhone">
+    <meta property="og:description" content="Ask a question. Press and hold the dial. Receive a transmission from the Fifth Sun.">
+    <meta property="og:image" content="https://ollintuner.com/transmission-screen.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&family=Instrument+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "The Ollin Tuner",
+        "operatingSystem": "iOS",
+        "applicationCategory": "EntertainmentApplication",
+        "url": "https://ollintuner.com/",
+        "downloadUrl": "https://apps.apple.com/us/app/the-ollin-tuner/id6759269358",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
 </head>
 <body>
 
-    <!-- Background -->
-    <div class="bg-void">
-        <div class="dust"></div><div class="dust"></div><div class="dust"></div>
-        <div class="dust"></div><div class="dust"></div><div class="dust"></div>
-        <div class="dust"></div><div class="dust"></div><div class="dust"></div>
-        <div class="dust"></div>
-    </div>
+    <div class="bg-void" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <span class="logo">Ollin Tuner</span>
+    <nav class="site-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">
+                <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5"/><circle cx="12" cy="12" r="4"/><path d="M12 1.5v4M12 18.5v4M1.5 12h4M18.5 12h4"/></svg>
+                Ollin Tuner
+            </a>
             <div class="links">
                 <a href="#ritual">The Ritual</a>
                 <a href="#features">Features</a>
-                <a href="privacy.html">Privacy</a>
+                <a href="#pricing">Pricing</a>
                 <a href="support.html">Support</a>
             </div>
+            <a href="https://apps.apple.com/us/app/the-ollin-tuner/id6759269358" class="btn btn-small">Get the app</a>
         </div>
     </nav>
 
-    <div class="content">
+    <main class="content">
 
         <!-- Hero -->
         <section class="hero">
-            <div class="container">
-                <p class="hero-kicker">Aztec Oracle for iOS</p>
-                <h1>Calibrate the<br>Ancient Frequency</h1>
-                <p class="tagline">Ask a question. Hold the dial. Receive a transmission from the heart of the Aztec Fifth Sun. How does it know? That&rsquo;s between you and Ollin.</p>
-
-                <div class="hero-screenshots">
-                    <img src="main-screen.png" alt="Ollin Tuner main screen" class="hero-phone hero-phone-side">
-                    <img src="vibration-screen.png" alt="Tuning the dial" class="hero-phone hero-phone-center">
-                    <img src="transmission-screen.png" alt="Transmission received" class="hero-phone hero-phone-side">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="kicker">Aztec Oracle for iPhone</p>
+                    <h1 class="display">Calibrate the<br>Ancient Frequency</h1>
+                    <p class="tagline">Ask a question. Press and hold the dial. Receive a transmission from the heart of the Fifth Sun. How does it know? That&rsquo;s between you and Ollin.</p>
+                    <div class="hero-actions">
+                        <a href="https://apps.apple.com/us/app/the-ollin-tuner/id6759269358" class="btn btn-primary">Download on the App Store</a>
+                    </div>
+                    <p class="hero-sub">Free &middot; Ages 4+ &middot; No account required</p>
                 </div>
 
-                <a href="https://apps.apple.com/us/app/the-ollin-tuner/id6759269358" class="store-badge">Download on the App Store</a>
-                <p class="hero-sub">Free &middot; Ages 4+ &middot; No account required</p>
+                <!-- Interactive dial -->
+                <div class="ritual-panel" id="ritual-panel">
+                    <div class="dial-wrap">
+                        <canvas id="dial" class="dial" role="button" tabindex="0"
+                                aria-label="Press and hold the dial to receive a transmission"></canvas>
+                        <div class="dial-flash" aria-hidden="true"></div>
+                    </div>
+                    <div class="dial-status">
+                        <p class="dial-prompt" id="dial-prompt">Press and hold the dial</p>
+                        <div class="dial-meter" aria-hidden="true">
+                            <span class="dial-meter-fill" id="dial-meter-fill"></span>
+                        </div>
+                        <p class="dial-hz" id="dial-hz" aria-hidden="true">&nbsp;</p>
+                    </div>
+                    <div class="transmission" id="transmission" aria-live="polite">
+                        <p class="transmission-label">Transmission received</p>
+                        <p class="transmission-text" id="transmission-text"></p>
+                        <p class="transmission-cta">Ask Ollin anything in the app &rarr;</p>
+                    </div>
+                    <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="true">
+                        <span class="sound-on">Sound on</span><span class="sound-off">Sound off</span>
+                    </button>
+                </div>
             </div>
         </section>
 
-        <div class="aztec-divider">&#x25C8; &#x25C8; &#x25C8;</div>
+        <div class="fret" aria-hidden="true"></div>
 
         <!-- What is Ollin -->
-        <section id="ollin">
-            <div class="container">
-                <p class="section-label">The origin</p>
+        <section id="ollin" class="reveal">
+            <div class="container narrow">
+                <p class="kicker">The origin</p>
                 <h2 class="section-title">What is Ollin</h2>
-                <div class="lore-block">
-                    <p>In the Aztec Nahuatl tradition, <strong>Ollin</strong> is the day sign of Movement &mdash; the force that set the Fifth Sun into motion. It represents earthquakes, cosmic shifts, and the vibrations that connect all living things.</p>
-                    <p>The ancient Mexica believed that every question carries a vibrational frequency. When properly calibrated, this frequency reveals the answer already encoded in the cosmos.</p>
-                    <p>The Ollin Tuner reads this frequency. But some who hold the dial discover they can do more than just listen.</p>
+                <blockquote class="lore-quote">&ldquo;Ollin is the day sign of Movement &mdash; the force that set the Fifth Sun into motion.&rdquo;</blockquote>
+                <div class="lore">
+                    <p>In the Aztec Nahuatl tradition, <strong>Ollin</strong> represents earthquakes, cosmic shifts, and the vibrations that connect all living things. The ancient Mexica believed every question carries a frequency &mdash; and that, properly calibrated, it reveals the answer already encoded in the cosmos.</p>
+                    <p class="lore-hint">The Ollin Tuner reads this frequency. But some who hold the dial discover they can do more than just listen.</p>
                 </div>
             </div>
         </section>
 
-        <div class="aztec-divider">&#x25C8; &#x25C8; &#x25C8;</div>
+        <div class="fret" aria-hidden="true"></div>
 
         <!-- The Ritual -->
-        <section id="ritual">
+        <section id="ritual" class="reveal">
             <div class="container">
-                <p class="section-label">How it works</p>
-                <h2 class="section-title">The Ritual</h2>
+                <p class="kicker center">How it works</p>
+                <h2 class="section-title center">The Ritual</h2>
 
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">I</div>
+                <ol class="steps">
+                    <li class="step">
+                        <span class="step-number">I</span>
                         <h3>Ask</h3>
                         <p>Type your question and enter the command to begin the transmission. The command is more powerful than it appears.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">II</div>
+                    </li>
+                    <li class="step">
+                        <span class="step-number">II</span>
                         <h3>Hold</h3>
                         <p>Press and hold the dial. The calendar rings accelerate, the frequency sweeps from 120&nbsp;Hz to 432&nbsp;Hz, and the vibration locks in.</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">III</div>
+                    </li>
+                    <li class="step">
+                        <span class="step-number">III</span>
                         <h3>Receive</h3>
-                        <p>The transmission is decoded and revealed &mdash; then spoken aloud in a deep, ancient voice that emerges from the void.</p>
-                    </div>
+                        <p>The transmission is decoded, revealed, and spoken aloud by Ollin in a deep voice that rises from the void.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Screens -->
+        <section id="screens" class="screens reveal">
+            <div class="container">
+                <div class="phone-fan">
+                    <figure class="phone phone-left"><img src="main-screen.png" alt="The Ollin Tuner main screen with the animated Aztec Sun Stone dial" loading="lazy"></figure>
+                    <figure class="phone phone-center"><img src="vibration-screen.png" alt="Holding the dial as the frequency tunes" loading="lazy"></figure>
+                    <figure class="phone phone-right"><img src="transmission-screen.png" alt="A transmission received from Ollin" loading="lazy"></figure>
                 </div>
             </div>
         </section>
 
-        <div class="aztec-divider">&#x25C8; &#x25C8; &#x25C8;</div>
+        <div class="fret" aria-hidden="true"></div>
 
         <!-- Features -->
-        <section id="features">
+        <section id="features" class="reveal">
             <div class="container">
-                <p class="section-label">What lies within</p>
-                <h2 class="section-title">Features</h2>
+                <p class="kicker center">What lies within</p>
+                <h2 class="section-title center">Features</h2>
 
                 <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="icon">&#x25CE;</div>
+                    <article class="card">
+                        <svg class="card-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13"/><circle cx="16" cy="16" r="8"/><circle cx="16" cy="16" r="2.5"/><path d="M16 3v3M16 26v3M3 16h3M26 16h3"/></svg>
                         <h3>Living Sun Stone</h3>
-                        <p>A fully animated Aztec calendar drawn entirely in code. Counter-rotating glyph rings, cymatics sand particles, and a pulsing Ollin eye at the center &mdash; all synchronized to the frequency.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">&#x266B;</div>
+                        <p>An animated Aztec Sun Stone drawn entirely in code &mdash; counter-rotating rings, cymatics sand, and the watchful eye of Ollin at the center.</p>
+                    </article>
+                    <article class="card">
+                        <svg class="card-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 16c2.5-7 5-7 7 0s4.5 7 7 0 4.5-7 7 0 4.5 7 7 0"/></svg>
                         <h3>Frequency Synthesis</h3>
-                        <p>A real-time audio engine sweeps from 120&nbsp;Hz to 432&nbsp;Hz with harmonic overtones and wobble. Not a recording &mdash; the frequency is generated live as you hold the dial.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">&#x1F441;</div>
+                        <p>A real-time audio engine sweeps from 120&nbsp;Hz to 432&nbsp;Hz as you hold the dial. Not a recording &mdash; the frequency is generated live.</p>
+                    </article>
+                    <article class="card">
+                        <svg class="card-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 16s5-9 14-9 14 9 14 9-5 9-14 9S2 16 2 16z"/><circle cx="16" cy="16" r="4.5"/></svg>
                         <h3>Uncanny Readings</h3>
                         <p>Every transmission is specific, personal, and eerily accurate. Hand it to a friend and watch their face. They will not understand how it knows.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">&#x2725;</div>
-                        <h3>Ancient Voice</h3>
-                        <p>Every transmission is spoken aloud in a deep, resonant voice that emerges from the obsidian void. Ollin does not whisper.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">&#x2726;</div>
+                    </article>
+                    <article class="card">
+                        <svg class="card-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M6 12v8M11 8v16M16 4v24M21 8v16M26 12v8"/></svg>
+                        <h3>The Voice of Ollin</h3>
+                        <p>Every transmission is spoken aloud &mdash; deep, resonant, echoing from the obsidian void. Rendered right on your iPhone.</p>
+                    </article>
+                    <article class="card">
+                        <svg class="card-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="M16 3L27.3 22.5H4.7z"/><circle cx="16" cy="16" r="6.5"/></svg>
                         <h3>Sacred Geometry</h3>
-                        <p>Ring pulses, eye movement, and haptic vibrations all follow Fibonacci intervals and the golden ratio. The motion feels ancient because it is mathematical.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">&#x2605;</div>
+                        <p>Ring pulses, the gaze of the eye, and the haptics all follow Fibonacci intervals and the golden angle. The motion feels ancient because it is mathematical.</p>
+                    </article>
+                    <article class="card">
+                        <svg class="card-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3l11 4v8c0 7-4.7 12-11 14C9.7 27 5 22 5 15V7z"/><path d="M11 16l3.5 3.5L21 13"/></svg>
                         <h3>Family Safe</h3>
-                        <p>Rated ages 4+. All readings are positive, encouraging, and safe for the whole family. No data collected. No account required.</p>
-                    </div>
+                        <p>Rated 4+. Readings are positive and encouraging, and ads are limited to content suitable for all ages. No account required.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <div class="aztec-divider">&#x25C8; &#x25C8; &#x25C8;</div>
+        <div class="fret" aria-hidden="true"></div>
 
         <!-- The Secret -->
-        <section id="secret" style="text-align: center;">
-            <div class="container">
-                <p class="section-label">There is more</p>
-                <h2 class="section-title">A Secret Within</h2>
-                <p class="secret-text">Not every transmission comes from the cosmos. The Ollin Tuner holds a hidden layer &mdash; a secret known only to the one who holds the phone. Those who discover it gain the power to leave their friends stunned, speechless, and completely unable to explain what just happened.</p>
-                <p class="secret-text secret-cta">The app will teach you. Pay attention during the tutorial.</p>
-            </div>
-        </section>
-
-        <div class="aztec-divider">&#x25C8; &#x25C8; &#x25C8;</div>
-
-        <!-- Screenshots -->
-        <section id="screenshots">
-            <div class="container">
-                <p class="section-label">See it in action</p>
-                <h2 class="section-title">Screenshots</h2>
-
-                <div class="screenshots-grid">
-                    <img src="tutorial-theollintuner.png" alt="Tutorial: The Ollin Tuner introduction" class="screenshot-img">
-                    <img src="tutorial-whatisollin.png" alt="Tutorial: What is Ollin" class="screenshot-img">
-                    <img src="tutorial-vibrations.png" alt="Tutorial: Cosmic Vibrations and frequencies" class="screenshot-img">
+        <section id="secret" class="reveal">
+            <div class="container narrow">
+                <div class="tablet">
+                    <p class="kicker center">There is more</p>
+                    <h2 class="section-title center">A Secret Within</h2>
+                    <p class="tablet-text">Not every transmission comes from the cosmos. The Ollin Tuner holds a hidden layer &mdash; a secret known only to the one who holds the phone. Those who discover it gain the power to leave their friends stunned, speechless, and completely unable to explain what just happened.</p>
+                    <p class="tablet-hint">The app will teach you. Pay attention during the tutorial.</p>
                 </div>
             </div>
         </section>
 
-        <div class="aztec-divider">&#x25C8; &#x25C8; &#x25C8;</div>
+        <!-- Tutorial screens -->
+        <section id="screenshots" class="reveal">
+            <div class="container">
+                <p class="kicker center">The initiation</p>
+                <h2 class="section-title center">Learn the Ways</h2>
+                <div class="shots">
+                    <img src="tutorial-theollintuner.png" alt="Tutorial: The Ollin Tuner introduction" loading="lazy">
+                    <img src="tutorial-whatisollin.png" alt="Tutorial: What is Ollin" loading="lazy">
+                    <img src="tutorial-vibrations.png" alt="Tutorial: Cosmic vibrations and frequencies" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <div class="fret" aria-hidden="true"></div>
 
         <!-- Pricing -->
-        <section id="pricing" style="text-align: center;">
+        <section id="pricing" class="reveal">
             <div class="container">
-                <p class="section-label">Calibration tiers</p>
-                <h2 class="section-title">Pricing</h2>
+                <p class="kicker center">Calibration tiers</p>
+                <h2 class="section-title center">Pricing</h2>
 
                 <div class="pricing-grid">
-                    <div class="pricing-card">
+                    <article class="card price-card">
                         <h3>Free</h3>
                         <p class="price">$0</p>
+                        <p class="price-note">forever</p>
                         <ul>
-                            <li>3 calibrations per day</li>
-                            <li>Full oracle experience</li>
-                            <li>Voice narration</li>
+                            <li>3 transmissions every day</li>
+                            <li>The full oracle experience</li>
+                            <li>The voice of Ollin</li>
                             <li>Contains ads</li>
                         </ul>
-                    </div>
-                    <div class="pricing-card pricing-card-highlight">
-                        <h3>Unlimited</h3>
+                    </article>
+                    <article class="card price-card">
+                        <h3>3 More Transmissions</h3>
+                        <p class="price">$0.99</p>
+                        <p class="price-note">one-time &middot; never expire</p>
+                        <ul>
+                            <li>Top up when the daily three run out</li>
+                            <li>Carry over to the next day</li>
+                        </ul>
+                    </article>
+                    <article class="card price-card price-card-featured">
+                        <span class="badge">Best value</span>
+                        <h3>Eternal Frequency</h3>
                         <p class="price">$4.99</p>
                         <p class="price-note">one-time purchase</p>
                         <ul>
-                            <li>Unlimited calibrations</li>
+                            <li>Unlimited transmissions</li>
                             <li>No ads, ever</li>
-                            <li>All features unlocked</li>
                             <li>Supports the developer</li>
                         </ul>
-                    </div>
+                    </article>
                 </div>
+                <p class="pricing-footnote">Prices in USD; your local App Store price may differ.</p>
             </div>
         </section>
 
-        <div class="aztec-divider">&#x25C8; &#x25C8; &#x25C8;</div>
-
-        <!-- Download -->
-        <section id="download" style="text-align: center;">
-            <div class="container">
-                <p class="section-label">The frequency awaits</p>
-                <h2 class="section-title" style="margin-bottom: 16px;">Download</h2>
-                <p class="download-desc">Available now on the App Store. Free to use. No account needed.</p>
-                <a href="https://apps.apple.com/us/app/the-ollin-tuner/id6759269358" class="store-badge">Download on the App Store</a>
+        <!-- Final CTA -->
+        <section id="download" class="final-cta reveal">
+            <div class="container narrow center">
+                <p class="kicker center">The frequency awaits</p>
+                <h2 class="display display-small">Hold the Dial</h2>
+                <p class="final-text">Available now on the App Store. Free to use. No account needed.</p>
+                <a href="https://apps.apple.com/us/app/the-ollin-tuner/id6759269358" class="btn btn-primary">Download on the App Store</a>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Use</a>
-                    <a href="support.html">Support</a>
-                    <a href="mailto:contact@ollintuner.com">Contact</a>
-                </div>
-                <p class="copyright">&copy; 2025 Ollin Tuner. All rights reserved.</p>
-                <p class="sign-off">The frequency responds.</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="support.html">Support</a>
+                <a href="mailto:contact@ollintuner.com">Contact</a>
             </div>
-        </footer>
+            <p class="copyright">&copy; 2026 Ollin Tuner. For entertainment purposes only.</p>
+            <p class="sign-off">The frequency responds.</p>
+        </div>
+    </footer>
 
-    </div>
-
-    <!-- Developer Bar -->
     <div class="dev-bar">
         <span class="dev-bar-label">Brought to you by</span>
         <a href="https://joelint.com" class="dev-bar-name">Joe Lint</a>
     </div>
+
+    <script src="ollin.js" defer></script>
 </body>
 </html>
