@@ -515,15 +515,29 @@
         oscs.forEach((o) => o.stop(t0 + fade + 0.05));
         tone = null;
     }
+    const LOCK_MS = 600;           // lock chime length; the voice waits for it
+    let lockVoice = null;          // the ringing chime, so speech can cut it short
     function lockTone() {
         if (!tone || !audio) return;
-        const { out } = tone;
+        const { out, oscs } = tone;
         const t0 = audio.currentTime;
         out.gain.cancelScheduledValues(t0);
         out.gain.setValueAtTime(0.3, t0);
-        out.gain.exponentialRampToValueAtTime(0.001, t0 + 0.9);
-        tone.oscs.forEach((o) => o.stop(t0 + 1));
+        out.gain.exponentialRampToValueAtTime(0.001, t0 + LOCK_MS / 1000);
+        oscs.forEach((o) => o.stop(t0 + LOCK_MS / 1000 + 0.05));
+        lockVoice = tone;
         tone = null;
+    }
+    // Fade whatever is still ringing so it never plays under the voice
+    function silenceTones() {
+        stopTone(0.08);
+        if (lockVoice && audio) {
+            const g = lockVoice.out.gain, t0 = audio.currentTime;
+            g.cancelScheduledValues(t0);
+            g.setValueAtTime(g.value, t0);
+            g.linearRampToValueAtTime(0, t0 + 0.08);
+            lockVoice = null;
+        }
     }
 
     let voice = null;
@@ -540,6 +554,7 @@
     function speak(text) {
         if (!soundOn || !("speechSynthesis" in window)) return;
         speechSynthesis.cancel();
+        silenceTones();
         const u = new SpeechSynthesisUtterance(text);
         if (voice) u.voice = voice;
         u.pitch = 0.55;
@@ -590,6 +605,8 @@
     }
 
     let pendingSpeech = null;
+    let speechTimer = 0;
+    const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent);
     function beginHold(e) {
         if (holdStart !== null) return;
         if (e && e.pointerId !== undefined) canvas.setPointerCapture?.(e.pointerId);
@@ -598,6 +615,8 @@
         panel.classList.add("holding");
         promptEl.textContent = "Tuning…";
         transmissionEl.classList.remove("shown");
+        clearTimeout(speechTimer);
+        pendingSpeech = null;
         if ("speechSynthesis" in window) speechSynthesis.cancel();
         primeSpeech();
         startTone();
@@ -607,7 +626,8 @@
     }
     function endHold() {
         if (holdStart === null) {
-            if (pendingSpeech) { speak(pendingSpeech); pendingSpeech = null; }
+            // iOS only lets speech start inside a gesture, so it speaks on release
+            if (pendingSpeech && isIOS) { speak(pendingSpeech); pendingSpeech = null; }
             return;
         }
         const p = holdProgress(performance.now());
@@ -645,7 +665,12 @@
         showTransmission(text);
         // Speak now if allowed; iOS may need the release gesture, so retry on pointerup
         pendingSpeech = text;
-        if (!/iP(hone|ad|od)/.test(navigator.userAgent)) { speak(text); pendingSpeech = null; }
+        if (!isIOS) {
+            // Let the lock chime ring out first, then Ollin speaks
+            speechTimer = setTimeout(() => {
+                if (pendingSpeech === text) { speak(text); pendingSpeech = null; }
+            }, LOCK_MS);
+        }
     }
     function updateHoldUI(p) {
         meterFill.style.transform = `scaleX(${p})`;
